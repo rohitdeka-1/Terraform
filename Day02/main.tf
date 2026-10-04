@@ -12,9 +12,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
-#create a resource
-resource "s3_bucket" "my_bucket" {
-  bucket = "my-bucket-rhd-unique-name"
-
+#create s3 Bucket
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "rhd-deka-001"
+  tags = {
+    Name        = "my-bucket-rhd-unique-name"
+    Environment = "Dev"
+  }
 }
 
