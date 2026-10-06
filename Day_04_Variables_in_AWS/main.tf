@@ -7,6 +7,18 @@ terraform {
   }
 }
 
+//Input variables
+variable "the_code_environment" {
+  default = "dev"
+  type    = string
+}
+
+// local values
+locals {
+  env = "dev"
+}
+
+
 # configure the AWS provider
 provider "aws" {
   region = "us-east-1"
@@ -17,7 +29,7 @@ resource "aws_s3_bucket" "my_bucket" {
   bucket = "rhd-deka-001"
   tags = {
     Name        = "my-bucket-rhd-unique-name"
-    Environment = "Dev"
+    Environment = var.the_code_environment
   }
 }
 
@@ -27,7 +39,7 @@ resource "aws_ec2" "name" {
 
   tags = {
     Name        = "my-instance-rhd-unique-name"
-    Environment = "Dev"
+    Environment = var.the_code_environment
   }
 }
 
