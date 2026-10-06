@@ -1,2 +1,2 @@
-Data Types
+#Data Types
 ![alt text](image.png)
