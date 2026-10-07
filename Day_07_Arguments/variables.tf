@@ -3,7 +3,12 @@
 variable "bucket_names" {
   description = "List of buckets to be created"
   type        = list(string)
-  default     = ["${var.region}-bucket-one", "${var.region}-bucket-two"]
+  default     = ["ap-south-1-bucket-one", "ap-south-1-bucket-two"]
+}
+
+variable "web_bucket" {
+  type    = set(string)
+  default = ["ap-south-1-web-bucket-one", "ap-south-1-web-bucket-two"]
 }
 
 variable "region" {
