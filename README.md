@@ -7,5 +7,6 @@
 - [Day_04_Variables_in_AWS](./Day_04_Variables_in_AWS/readme.md)
 - [Day_05_Project_Best_Practices](./Day_05_Project_Best_Practices/readme.md)
 - [Day_06_Types](./Day_06_Types/readme.md)
+- [Day_07_Arguments](./Day_07_Arguments/readme.md)
 
 <!-- PROGRESS_END -->
