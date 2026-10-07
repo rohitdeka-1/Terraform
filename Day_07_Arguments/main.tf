@@ -5,9 +5,9 @@ resource "aws_s3_bucket" "app_data" {
 }
 
 resource "aws_s3_bucket" "web_data" {
-  for_each = var.web_bucket
-  bucket   = lower(each.value)
-
+  for_each   = var.web_bucket
+  bucket     = lower(each.value)
+  depends_on = [aws_s3_bucket.app_data[0]]
   tags = {
     Name = each.value
   }
