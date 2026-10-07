@@ -1,4 +1,11 @@
 # String data type
+
+variable "bucket_names" {
+  description = "List of buckets to be created"
+  type        = list(string)
+  default     = ["${var.region}-bucket-one", "${var.region}-bucket-two"]
+}
+
 variable "region" {
   description = "The AWS region to deploy to"
   type        = string

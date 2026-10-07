@@ -24,3 +24,12 @@ resource "aws_instance" "web" {
     Name = "${local.name_prefix}-Instance-${count.index + 1}"
   })
 }
+resource "aws_s3_bucket" "app_data" {
+  # Using a local variable (which itself uses var.common_tags) to name the bucket
+  # We also use the lower() function as bucket names must be lowercase
+  bucket = lower("${local.name_prefix}-app-data")
+
+  # Applying the merged tags from locals
+  tags = local.merged_tags
+}
+
