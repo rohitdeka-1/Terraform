@@ -1,7 +1,7 @@
 locals {
   # We can merge tags or manipulate data here
   merged_tags = merge(var.common_tags, {
-    ManagedBy  = "Terraform"
+    ManagedBy = "Terraform"
     Monitoring = tostring(var.enable_monitoring)
   })
 
