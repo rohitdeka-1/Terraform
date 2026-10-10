@@ -106,7 +106,7 @@ resource "aws_launch_template" "web_lt" {
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
-              echo "<h1>Hello from Terraform Multi-Tier!</h1>" > /var/www/html/index.html
+              echo "<h1>Hello from Terraform Rohit Multi-Tier!</h1>" > /var/www/html/index.html
               echo "<p>Connected to Database at: ${var.db_endpoint}</p>" >> /var/www/html/index.html
               EOF
   )
